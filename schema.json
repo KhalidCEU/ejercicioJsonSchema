@@ -1,0 +1,62 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://example.com/schemas/.json",
+    "$type": "object",
+    "title": "Squad games",
+    "description": "Squad info",
+    "required": ["squadName", "active"],
+    "properties": {
+        "squadName": {
+            "type": "string",
+            "description": "The name of the sqaud"
+        },
+        "homeTown": {
+            "type": "string",
+            "description": "The name of the home town"
+        },
+        "formed": {
+            "type": "number",
+            "description": "The year of the squad creation"
+        },
+        "secretBase": {
+            "type": "string",
+            "description": "The name of the squad's secret base"
+        },
+        "active": {
+            "type": "boolean",
+            "description": "Indicates if the squad iss active"
+        },
+        "members": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/member" }
+        }
+    },
+    "$defs": {
+        "member": {
+            "type": "object",
+            "required": ["name", "secretIdentity"],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The name"
+                },
+                "age": {
+                    "type": "number",
+                    "description": "The age"
+                },
+                "secretIdentity": {
+                    "type": "string",
+                    "description": "The member's secret name"
+                },
+                "powers": {
+                    "type": "array",
+                    "items": { "$ref": "#/$defs/power"}
+                }
+            }
+        },
+        "power": {
+            "type": "string",
+            "description": "The name of the power"
+        }
+    }
+}

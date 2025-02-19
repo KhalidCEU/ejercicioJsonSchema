@@ -1,0 +1,10 @@
+{
+    "name": "A cool name",
+    "artist": "A cool artist",
+    "description": "A cool description",
+    "dimension": {
+        "width": 42,
+        "height": 42
+    },
+    "tags": ["oil"]
+}
